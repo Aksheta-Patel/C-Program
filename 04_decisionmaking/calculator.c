@@ -17,7 +17,11 @@ switch(choice)
     printf("%d",a*b);
     break;
     case 4:
+    if(b>0)
     printf("%d",a/b);
+    else{
+        printf("invalid");
+    }
     break;
     
 }}
