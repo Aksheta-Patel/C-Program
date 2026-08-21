@@ -4,13 +4,11 @@ int main()
     int n,i=1,fact=1;
     printf("enter num\n");
     scanf("%d",&n);
-    //Validate the input 
-
-    //for fectorial run the loop 
     while(i<=n)
     {   
         fact=fact*i;
-        printf("%d",fact);
+        i++;
         
     }
+    printf("%d",fact);
  }
