@@ -1,10 +1,16 @@
+/* */
+
 #include <stdio.h>
+
+
 int main()
 {int a,b,choice;
 printf(" enter two numbers");
 scanf("%d %d",&a,&b);
 printf("enter 1,2,3 or 4");
 scanf("%d",&choice);
+
+
 switch(choice)
 {
     case 1:

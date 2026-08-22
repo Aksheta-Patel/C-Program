@@ -22,7 +22,7 @@ int main()
             printf("First prime = %d", n);
             break;
         }
-
+          n++;
     }
 
 }

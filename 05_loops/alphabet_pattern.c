@@ -2,18 +2,20 @@
 
 int main()
 {   
-    int i, j, n = 1;
+    int i, j;
+    char ch;
 
 // controls rows
     for(i = 1; i <= 3; i++)
     { 
-
+        ch='a';
 // controls columns
 
         for(j = 1; j <= i; j++)
         {
-            printf("%d", n);
-            n++;
+            printf("%c", ch);
+            ch++;
+            
         }
 
         printf("\n");
