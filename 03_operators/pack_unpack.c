@@ -1,22 +1,72 @@
+/**
+ * @file pack_unpack.c
+ * @brief Demonstrates packing and unpacking two 8-bit values.
+ *
+ * This program takes two integer values from the user, packs them
+ * into one integer using bitwise operators, and then unpacks the
+ * original values.
+ */
+
 #include <stdio.h>
 
-int main()
+/**
+ * @brief Entry point of the program.
+ *
+ * The program:
+ * - Takes two values between 0 and 255 from the user.
+ * - Packs both values into one integer.
+ * - Unpacks the first value using right shift and bitwise AND.
+ * - Unpacks the second value using bitwise AND.
+ * - Displays the packed and unpacked values.
+ *
+ * @return int Returns 0 on successful execution.
+ */
+int main(void)
 {
-    int a = 10;
-    int b = 20;
-    int x, a1, b1;
+    /** Stores the first 8-bit value */
+    int a;
 
-    // Pack a and b into one 16-bit number
+    /** Stores the second 8-bit value */
+    int b;
+
+    /** Stores the packed value */
+    int x;
+
+    /** Stores the unpacked first value */
+    int a1;
+
+    /** Stores the unpacked second value */
+    int b1;
+
+    while (1)
+    {
+        printf("Enter two values between 0 and 255: ");
+
+        if (scanf("%d %d", &a, &b) == 2 &&
+            a >= 0 && a <= 255 &&
+            b >= 0 && b <= 255)
+        {
+            break;
+        }
+
+        printf("Invalid input. Please enter two values between 0 and 255 again.\n");
+
+        while (getchar() != '\n');
+    }
+
+    /* Pack a and b into one value */
     x = (a << 8) | b;
 
-    printf("Packed = %d\n", x);
+    printf("Packed value is %d\n", x);
 
-    // Unpack a
+    /* Unpack a */
     a1 = (x >> 8) & 255;
 
-    // Unpack b
+    /* Unpack b */
     b1 = x & 255;
 
-    printf("a = %d\n", a1);
-    printf("b = %d\n", b1);
+    printf("Unpacked first value is %d\n", a1);
+    printf("Unpacked second value is %d\n", b1);
+
+    return 0;
 }

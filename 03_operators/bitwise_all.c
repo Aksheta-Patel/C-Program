@@ -1,50 +1,100 @@
+/**
+ * @file bitwise_operators.c
+ * @brief Demonstrates basic bitwise operators.
+ *
+ * This program takes two integers from the user and demonstrates
+ * AND, OR, XOR, NOT, left shift, and right shift operations.
+ * The result of each operation is displayed in decimal and binary.
+ */
+
 #include <stdio.h>
 
-int main()
+/**
+ * @brief Entry point of the program.
+ *
+ * The program:
+ * - Takes two integers as input.
+ * - Performs bitwise AND operation.
+ * - Performs bitwise OR operation.
+ * - Performs bitwise XOR operation.
+ * - Performs bitwise NOT operation.
+ * - Performs left shift operation.
+ * - Performs right shift operation.
+ * - Displays each result in decimal and binary form.
+ *
+ * @return int Returns 0 on successful execution.
+ */
+int main(void)
 {
-    int a = 5, b = 3, r, i;
+    /** Stores the first integer */
+    int a;
 
-    // AND
+    /** Stores the second integer */
+    int b;
+
+    /** Stores the result of each bitwise operation */
+    int r;
+
+    /** Controls the binary display loop */
+    int i;
+
+    while (1)
+    {
+        printf("Enter two integers: ");
+
+        if (scanf("%d %d", &a, &b) == 2)
+        {
+            break;
+        }
+
+        printf("Invalid input. Please enter two integers again.\n");
+
+        while (getchar() != '\n');
+    }
+
+    /* AND operation */
     r = a & b;
-    printf("AND = %d  Binary = ", r);
+    printf("AND result is %d. Binary value is ", r);
 
-    for(i = 7; i >= 0; i--)
+    for (i = 7; i >= 0; i--)
         printf("%d", (r >> i) & 1);
 
-    // OR
+    /* OR operation */
     r = a | b;
-    printf("\nOR = %d  Binary = ", r);
+    printf("\nOR result is %d. Binary value is ", r);
 
-    for(i = 7; i >= 0; i--)
+    for (i = 7; i >= 0; i--)
         printf("%d", (r >> i) & 1);
 
-    // XOR
+    /* XOR operation */
     r = a ^ b;
-    printf("\nXOR = %d  Binary = ", r);
+    printf("\nXOR result is %d. Binary value is ", r);
 
-    for(i = 7; i >= 0; i--)
+    for (i = 7; i >= 0; i--)
         printf("%d", (r >> i) & 1);
 
-    // NOT
+    /* NOT operation */
     r = ~a;
-    printf("\nNOT = %d  Binary = ", r);
+    printf("\nNOT result of first integer is %d. Binary value is ", r);
 
-    for(i = 7; i >= 0; i--)
+    for (i = 7; i >= 0; i--)
         printf("%d", (r >> i) & 1);
 
-    // LEFT SHIFT
+    /* LEFT SHIFT operation */
     r = a << 1;
-    printf("\nLEFT = %d  Binary = ", r);
+    printf("\nLeft shift result is %d. Binary value is ", r);
 
-    for(i = 7; i >= 0; i--)
+    for (i = 7; i >= 0; i--)
         printf("%d", (r >> i) & 1);
 
-    // RIGHT SHIFT
+    /* RIGHT SHIFT operation */
     r = a >> 1;
-    printf("\nRIGHT = %d  Binary = ", r);
+    printf("\nRight shift result is %d. Binary value is ", r);
 
-    for(i = 7; i >= 0; i--)
+    for (i = 7; i >= 0; i--)
         printf("%d", (r >> i) & 1);
+
+    printf("\n");
 
     return 0;
 }

@@ -1,21 +1,44 @@
-#include<stdio.h>
+/**
+ * @file triangle.c
+ * @brief Checks the type of triangle based on its sides.
+ */
+
+#include <stdio.h>
+
+/**
+ * @brief Main function of the program.
+ *
+ * Takes three sides and checks whether the triangle is
+ * equilateral, isosceles, or scalene.
+ *
+ * @return 0 if the program runs successfully.
+ */
 int main()
-{ int a,b,c;
-    printf(" enter number");
-    scanf("%d%d%d",&a,&b,&c);
-if(a == b && b == c)
 {
-    printf(" equilateral");
-}
-    
+    /** First side of the triangle */
+    int a;
 
-else if(a == b || b == c || a == c)
+    /** Second side of the triangle */
+    int b;
+
+    /** Third side of the triangle */
+    int c;
+
+    printf("Enter three sides: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if(a == b && b == c)
     {
-        printf(" isosceles");
-}
-    
+        printf("Equilateral");
+    }
+    else if(a == b || b == c || a == c)
+    {
+        printf("Isosceles");
+    }
+    else
+    {
+        printf("Scalene");
+    }
 
-else{
-printf(" scalene");
-}
+    return 0;
 }

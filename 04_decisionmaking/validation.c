@@ -1,8 +1,28 @@
+/**
+ * @file calculator.c
+ * @brief Performs basic arithmetic operations using switch-case.
+ */
+
 #include <stdio.h>
 
+/**
+ * @brief Main function of the program.
+ *
+ * Takes two numbers and a choice from the user and performs
+ * addition, subtraction, multiplication, or division.
+ *
+ * @return 0 if the program runs successfully.
+ */
 int main()
 {
-int a, b, choice;
+    /** First number */
+    int a;
+
+    /** Second number */
+    int b;
+
+    /** Stores the user's choice */
+    int choice;
 
     printf("Enter two numbers: ");
     scanf("%d %d", &a, &b);
@@ -14,6 +34,7 @@ int a, b, choice;
 
     printf("Enter your choice: ");
     scanf("%d", &choice);
+
     if(choice < 1 || choice > 4)
     {
         printf("Invalid choice! Enter again: ");
@@ -23,19 +44,28 @@ int a, b, choice;
     switch(choice)
     {
         case 1:
-         printf("Result = %d", a + b);
-      break;
+            printf("Result = %d", a + b);
+            break;
 
         case 2:
-     printf("Result = %d", a - b);
+            printf("Result = %d", a - b);
             break;
+
         case 3:
-      printf("Result = %d", a * b);
+            printf("Result = %d", a * b);
             break;
 
         case 4:
-            printf("Result = %d", a / b);
-   break;
+            if(b != 0)
+            {
+                printf("Result = %d", a / b);
+            }
+            else
+            {
+                printf("Cannot divide by zero");
+            }
+            break;
+
         default:
             printf("Invalid choice");
     }

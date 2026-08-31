@@ -1,9 +1,25 @@
-#include<stdio.h>
+/**
+ * @file vowel_consonant.c
+ * @brief Checks whether a character is a vowel or consonant.
+ */
+
+#include <stdio.h>
+
+/**
+ * @brief Main function of the program.
+ *
+ * Takes a character from the user and checks whether it is
+ * an uppercase or lowercase vowel, consonant, or not an alphabet.
+ *
+ * @return 0 if the program runs successfully.
+ */
 int main()
 {
- char a;
-printf("Enter a character\n");
-    scanf("%c",&a);
+    /** Stores the character entered by the user */
+    char a;
+
+    printf("Enter a character: ");
+    scanf(" %c", &a);
 
     if(a >= 'A' && a <= 'Z')
     {
@@ -32,4 +48,5 @@ printf("Enter a character\n");
         printf("Not an alphabet");
     }
 
+    return 0;
 }

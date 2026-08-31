@@ -1,32 +1,58 @@
-#include<stdio.h>
+/**
+ * @file vowel.c
+ * @brief Checks whether a lowercase alphabet is a vowel or consonant.
+ */
+
+#include <stdio.h>
+
+/**
+ * @brief Main function of the program.
+ *
+ * Takes a character from the user and checks whether it is
+ * a vowel, consonant, or not an alphabet.
+ *
+ * @return 0 if the program runs successfully.
+ */
 int main()
 {
+    /** Stores the character entered by the user */
     char b;
-    printf("Enter alphabet\n");
-    scanf("%c",&b);
-    switch(b)
+
+    printf("Enter alphabet: ");
+    scanf(" %c", &b);
+
+    if(b >= 'a' && b <= 'z')
     {
-        case 'a':
-            printf(" vowel");
-            break;
+        switch(b)
+        {
+            case 'a':
+                printf("Vowel");
+                break;
 
-        case 'e':
-            printf(" vowel");
-            break;
+            case 'e':
+                printf("Vowel");
+                break;
 
-        case 'i':
-            printf(" vowel");
-            break;
+            case 'i':
+                printf("Vowel");
+                break;
 
-        case 'o':
-            printf(" vowel");
-            break;
+            case 'o':
+                printf("Vowel");
+                break;
 
-        case 'u':
-            printf(" vowel");
-            break;
+            case 'u':
+                printf("Vowel");
+                break;
 
-        default:
-            printf(" consonant");
+            default:
+                printf("Consonant");
+        }
     }
+    else
+    {
+        printf("Not an alphabet");
+    }
+
+    return 0;
 }

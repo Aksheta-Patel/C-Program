@@ -1,20 +1,61 @@
-#include<stdio.h>
-int main()
+/**
+ * @file largest_of_three.c
+ * @brief Finds the largest of three integers.
+ *
+ * This program takes three integers from the user and determines
+ * the largest number using if-else statements.
+ */
+
+#include <stdio.h>
+
+/**
+ * @brief Entry point of the program.
+ *
+ * The program:
+ * - Takes three integers from the user.
+ * - Compares the three integers.
+ * - Displays the largest number.
+ * - Handles equal values correctly.
+ *
+ * @return int Returns 0 on successful execution.
+ */
+int main(void)
 {
-    int a,b,c;
-    printf("enter a number\n");
-    scanf("%d %d %d",&a,&b,&c);
-    if (a>b && a>c)
+    /** Stores the first integer */
+    int a;
+
+    /** Stores the second integer */
+    int b;
+
+    /** Stores the third integer */
+    int c;
+
+    while (1)
     {
-        printf(" a is bigger\n");
+        printf("Enter three integers: ");
+
+        if (scanf("%d %d %d", &a, &b, &c) == 3)
+        {
+            break;
+        }
+
+        printf("Invalid input. Please enter three integers again.\n");
+
+        while (getchar() != '\n');
     }
-    
-    else if(b>c && b>a)
+
+    if (a >= b && a >= c)
     {
-        printf(" b is bigger\n");
+        printf("The largest number is %d.\n", a);
     }
-    
-    else {
-        printf(" c is bigger");
+    else if (b >= a && b >= c)
+    {
+        printf("The largest number is %d.\n", b);
     }
+    else
+    {
+        printf("The largest number is %d.\n", c);
+    }
+
+    return 0;
 }

@@ -1,16 +1,55 @@
+/**
+ * @file largest_of_three.c
+ * @brief Finds the largest of three integers.
+ *
+ * This program takes three integers from the user and compares
+ * them to find and display the largest value.
+ */
+
 #include <stdio.h>
 
-int main()
+/**
+ * @brief Entry point of the program.
+ *
+ * The program:
+ * - Takes three integers as input.
+ * - Compares the three values.
+ * - Finds the largest value.
+ * - Displays the largest value.
+ *
+ * @return int Returns 0 on successful execution.
+ */
+int main(void)
 {
-    int a, b, c;
+    /** Stores the first integer */
+    int a;
 
-    printf("Enter three numbers: ");
-    scanf("%d %d %d", &a, &b, &c);
+    /** Stores the second integer */
+    int b;
+
+    /** Stores the third integer */
+    int c;
+
+    while (1)
+    {
+        printf("Enter three integers: ");
+
+        if (scanf("%d %d %d", &a, &b, &c) == 3)
+        {
+            break;
+        }
+
+        printf("Invalid input. Please enter three integers again.\n");
+
+        while (getchar() != '\n');
+    }
 
     if (a >= b && a >= c)
-        printf("Largest = %d", a);
+        printf("The largest number is %d.\n", a);
     else if (b >= a && b >= c)
-        printf("Largest = %d", b);
+        printf("The largest number is %d.\n", b);
     else
-        printf("Largest = %d", c);
+        printf("The largest number is %d.\n", c);
+
+    return 0;
 }
