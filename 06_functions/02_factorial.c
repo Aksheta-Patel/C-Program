@@ -1,39 +1,48 @@
 #include <stdio.h>
 
 /**
- * @brief Calculates the factorial of a number.
+ * @brief Finds the factorial of a number.
  *
- * @param n The number whose factorial is calculated.
- * @return The factorial of n.
+ * @param n The number whose factorial is found.
+ * @return Factorial of n.
  */
-int fun(int n)
-{
-    int i,fact = 1;
-
-    /**
-     * Multiply fact by n and decrease n by 1
-     * until n becomes 0.
-     */
-    for(i=1; n > i; i++)
-    
-    {
-        fact = fact * n;
-    }
-
-    printf("%d", fact);
-}
+int factorial(int n);
 
 /**
- * @brief Main function.
+ * @brief Main function of the program.
  *
- * @return 0 on successful execution.
+ * @return 0 if the program runs successfully.
  */
 int main()
 {
     int n;
 
-    printf("Enter number: ");
-    scanf("%d", &n);
+    while(1)
+    {
+        printf("Enter a number: ");
+        scanf("%d", &n);
 
-    fun(n);
+        if(n >= 0)
+        {
+            break;
+        }
+
+        printf("Invalid! Enter 0 or a positive number.\n");
+    }
+
+    printf("Factorial = %d", factorial(n));
+
+    return 0;
+}
+
+int factorial(int n)
+{
+    int result = 1;
+
+    for(int i = 1; i <= n; i++)
+    {
+        result = result * i;
+    }
+
+    return result;
 }
