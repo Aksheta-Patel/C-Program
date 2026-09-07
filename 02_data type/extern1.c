@@ -7,11 +7,8 @@
  */
 int main()
 {
-    /**
-     * @brief Tells the compiler that variable a is defined in another file.
-     */
-    extern int a;
 
+    
     printf("%d\n", a);
 
     return 0;
