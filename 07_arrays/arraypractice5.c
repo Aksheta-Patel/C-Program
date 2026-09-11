@@ -10,7 +10,7 @@ int i;
             scanf("%d",&a[i]);
         
         }
-    printf(" first element is %d\n",a[0]);
+    
      for(i=0;i<=4;i++)
         {
         printf(" %d",a[i]);
@@ -19,10 +19,11 @@ int i;
     printf("\n");
     printf (" enter index : ");
     scanf("%d",&i);
+    a[i]++;
       
         
      for(i=0;i<=4;i++)
-        { a[i]++;
+        { 
         printf(" %d",a[i]);
            
         }
