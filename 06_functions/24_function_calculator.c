@@ -1,100 +1,144 @@
 /**
- * @file calculator.c
- * @brief Performs arithmetic operations using a switch statement.
- *
- * @details
- * The program takes two numbers and a choice from the user.
- * It performs addition, subtraction, multiplication, or division
- * according to the selected choice.
- *
- * Invalid input is rejected and the user is allowed to enter
- * the values again.
- */
+
+* @file calculator.c
+* @brief Performs basic calculator operations using functions and switch-case.
+*
+* The program accepts two positive integers and allows the user
+* to perform different arithmetic operations repeatedly.
+*
+* @return Returns 0 after successful execution.
+  */
 
 #include <stdio.h>
 
 /**
- * @brief Main function of the program.
- *
- * @details
- * The program:
- * - Takes two numbers from the user.
- * - Validates the entered numbers.
- * - Displays a calculator menu.
- * - Validates the menu choice.
- * - Performs the selected operation using switch.
- *
- * @return 0 if the program executes successfully.
- */
-int main(void)
-{
-    /** @brief Stores the first number. */
-    int a;
 
-    /** @brief Stores the second number. */
-    int b;
+* @brief Adds two numbers.
+*
+* @param a First number.
+* @param b Second number.
+* @return Sum of a and b.
+  */
+  int add(int a, int b)
+  {
+  return a + b;
+  }
 
-    /** @brief Stores the user's menu choice. */
-    int choice;
+/**
 
-    do
-    {
-        printf("Enter two numbers: ");
+* @brief Subtracts two numbers.
+*
+* @param a First number.
+* @param b Second number.
+* @return Difference of a and b.
+  */
+  int subtract(int a, int b)
+  {
+  return a - b;
+  }
 
-        if(scanf("%d%d", &a, &b) != 2)
-        {
-            printf("Invalid! Enter two numbers again.\n");
-            // scanf("%*s");
-            continue;
-        }
+/**
 
-        if(a <= 0 || b <= 0)
-        {
-            printf("Invalid! Enter positive numbers.\n");
-        }
+* @brief Multiplies two numbers.
+*
+* @param a First number.
+* @param b Second number.
+* @return Product of a and b.
+  */
+  int multiply(int a, int b)
+  {
+  return a * b;
+  }
 
-    } while(a <= 0 || b <= 0);
+/**
 
-    do
-    {
-        printf("\n1. Addition");
-        printf("\n2. Subtraction");
-        printf("\n3. Multiplication");
-        printf("\n4. Division");
-        printf("\n5. Exit");
+* @brief Divides two numbers.
+*
+* @param a First number.
+* @param b Second number.
+* @return Quotient of a and b.
+  */
+  int divide(int a, int b)
+  {
+  return a / b;
+  }
 
-        printf("\nEnter choice: ");
-        scanf("%d", &choice);
+/**
 
-        if(choice < 1 || choice > 5)
-        {
-            printf("Invalid choice! Enter 1 to 5.\n");
-        }
+* @brief Main function of the program.
+*
+* @return 0 after successful execution.
+  */
+  int main()
+  {
+  int a, b, choice;
+  char ch;
 
-    } while(choice < 1 || choice > 5);
+  do
+  {
+  printf("\nEnter two positive numbers: ");
 
-    switch(choice)
-    {
-        case 1:
-            printf("Result = %d", a + b);
-            break;
 
-        case 2:
-            printf("Result = %d", a - b);
-            break;
+   if(scanf("%d%d", &a, &b) == 2)
+   {
+       if(a > 0 && b > 0)
+       {
+           break;
+       }
 
-        case 3:
-            printf("Result = %d", a * b);
-            break;
+       printf("Enter positive numbers only.\n");
+   }
+   else
+   {
+       printf("Invalid input!\n");
 
-        case 4:
-            printf("Result = %d", a / b);
-            break;
+       while(scanf("%c", &ch) == 1 && ch != '\n')
+       {
+       }
+   }
+  
 
-        case 5:
-            printf("Exit");
-            break;
-    }
+  } while(1);
 
-    return 0;
-}
+  do
+  {
+  printf("\n1. Addition");
+  printf("\n2. Subtraction");
+  printf("\n3. Multiplication");
+  printf("\n4. Division");
+  printf("\n5. Exit");
+
+
+   printf("\nEnter your choice: ");
+   scanf("%d", &choice);
+
+   switch(choice)
+   {
+       case 1:
+           printf("Result = %d\n", add(a, b));
+           break;
+
+       case 2:
+           printf("Result = %d\n", subtract(a, b));
+           break;
+
+       case 3:
+           printf("Result = %d\n", multiply(a, b));
+           break;
+
+       case 4:
+           printf("Result = %d\n", divide(a, b));
+           break;
+
+       case 5:
+           printf("exit.\n");
+           break;
+
+       default:
+           printf("Invalid choice!\n");
+   }
+  
+  } while(choice != 5);
+
+  return 0;
+  }

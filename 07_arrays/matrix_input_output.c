@@ -45,5 +45,13 @@
   {printf("%d", a[i][j]);
   }
   }
+  for(i = 0; i < 2; i++)
+  { for(j= 0; j < 2; j++)
+  { a[j][i]=a[i][j];
+    printf("%d", a[j][i]);
+  }
+  }
+
+  
   return 0;
   }

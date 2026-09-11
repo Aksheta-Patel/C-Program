@@ -29,6 +29,7 @@ int main()
     for(i = 0; i < 2; i++)
     {
         b[i] = a[i];
+        
         printf("%d ", b[i]);
     }
 
