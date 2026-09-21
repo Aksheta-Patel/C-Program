@@ -1,56 +1,65 @@
 /**
- * @file pass_fail.c
- * @brief Checks whether a number represents a pass or fail result.
- *
- * This program takes a number from the user and uses the ternary
- * operator to store 'p' for a value greater than 35 and 'f'
- * otherwise.
- */
+
+* @file pass_fail.c
+* @brief Checks whether a number represents a pass or fail result.
+*
+* This program takes a number from the user and uses the ternary
+* operator to store 'p' for a value greater than 35 and 'f'
+* otherwise.
+  */
 
 #include <stdio.h>
 
 /**
- * @brief Entry point of the program.
- *
- * The program:
- * - Takes an integer from the user.
- * - Checks whether the value is greater than 35.
- * - Stores 'p' for pass or 'f' for fail.
- * - Displays the result.
- *
- * @return int Returns 0 on successful execution.
- */
-int main(void)
-{
-    /** Stores the number entered by the user */
-    int a;
 
-    /** Character representing pass */
-    char pass = 'p';
+* @brief Entry point of the program.
+*
+* The program:
+* * Takes an integer from the user.
+* * Checks whether the value is greater than 35.
+* * Stores 'p' for pass or 'f' for fail.
+* * Displays the result.
+*
+* @return int Returns 0 on successful execution.
+  */
+  int main(void)
+  {
+  /** Stores the number entered by the user */
+  int a;
 
-    /** Character representing fail */
-    char fail = 'f';
+  /** Character representing pass */
+  char pass = 'p';
 
-    /** Stores the final pass or fail result */
-    char result;
+  /** Character representing fail */
+  char fail = 'f';
 
-    while (1)
-    {
-        printf("Enter the number: ");
+  /** Stores the final pass or fail result */
+  char result;
 
-        if (scanf("%d", &a) == 1)
-        {
-            break;
-        }
+  char ch;
 
-        printf("Invalid input. Please enter an integer again.\n");
+  while (1)
+  {
+  printf("Enter the number: ");
 
-        while (getchar() != '\n');
-    }
+  
+   if (scanf("%d", &a) == 1)
+   {
+       break;
+   }
 
-    result = (a > 35) ? pass : fail;
+   printf("Invalid input. Please enter an integer again.\n");
 
-    printf("Result is %c\n", result);
+   while (scanf("%c", &ch) == 1 && ch != '\n')
+   {
+   }
+  
 
-    return 0;
-}
+  }
+
+  result = (a > 35) ? pass : fail;
+
+  printf("Result is %c\n", result);
+
+  return 0;
+  }
