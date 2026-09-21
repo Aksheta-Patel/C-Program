@@ -1,49 +1,57 @@
 /**
- * @file absolute_value.c
- * @brief Finds the absolute value of an integer.
- *
- * This program takes an integer from the user and uses the
- * ternary operator to find its absolute value.
- */
+
+* @file absolute_value.c
+* @brief Finds the absolute value of an integer.
+*
+* This program takes an integer from the user and uses the
+* ternary operator to find its absolute value.
+  */
 
 #include <stdio.h>
 
 /**
- * @brief Entry point of the program.
- *
- * The program:
- * - Takes an integer from the user.
- * - Checks whether the integer is positive.
- * - Converts a negative integer into its positive value.
- * - Displays the absolute value.
- *
- * @return int Returns 0 on successful execution.
- */
-int main(void)
-{
-    /** Stores the number entered by the user */
-    int a;
 
-    /** Stores the absolute value */
-    int result;
+* @brief Entry point of the program.
+*
+* The program:
+* * Takes an integer from the user.
+* * Checks whether the integer is positive.
+* * Converts a negative integer into its positive value.
+* * Displays the absolute value.
+*
+* @return int Returns 0 on successful execution.
+  */
+  int main(void)
+  {
+  /** Stores the number entered by the user */
+  int a;
 
-    while (1)
-    {
-        printf("Enter an integer: ");
+  /** Stores the absolute value */
+  int result;
 
-        if (scanf("%d", &a) == 1)
-        {
-            break;
-        }
+  char ch;
 
-        printf("Invalid input. Please enter an integer again.\n");
+  while (1)
+  {
+  printf("Enter an integer: ");
 
-        while (getchar() != '\n');
-    }
+   if (scanf("%d", &a) == 1)
+   {
+       break;
+   }
 
-    result = (a > 0) ? a : -a;
+   printf("Invalid input. Please enter an integer again.\n");
 
-    printf("The absolute value is %d.\n", result);
+   while (scanf("%c", &ch) == 1 && ch != '\n')
+   {
+   }
+ 
 
-    return 0;
-}
+  }
+
+  result = (a > 0) ? a : -a;
+
+  printf("The absolute value is %d.\n", result);
+
+  return 0;
+  }

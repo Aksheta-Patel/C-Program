@@ -1,60 +1,69 @@
 /**
- * @file character_type.c
- * @brief Identifies the type of a character.
- *
- * This program takes a character from the user and checks whether
- * it is an uppercase letter, lowercase letter, digit, or special character.
- */
+
+* @file character_type.c
+* @brief Identifies the type of a character.
+*
+* This program takes a character from the user and checks whether
+* it is an uppercase letter, lowercase letter, digit, or special character.
+  */
 
 #include <stdio.h>
 
 /**
- * @brief Entry point of the program.
- *
- * The program:
- * - Takes a character from the user.
- * - Checks whether it is an uppercase letter.
- * - Checks whether it is a lowercase letter.
- * - Checks whether it is a digit.
- * - Otherwise identifies it as a special character.
- *
- * @return int Returns 0 on successful execution.
- */
-int main(void)
-{
-    /** Stores the character entered by the user */
-    char a;
 
-    while (1)
-    {
-        printf("Enter a character: ");
+* @brief Entry point of the program.
+*
+* The program:
+* * Takes a character from the user.
+* * Checks whether it is an uppercase letter.
+* * Checks whether it is a lowercase letter.
+* * Checks whether it is a digit.
+* * Otherwise identifies it as a special character.
+*
+* @return int Returns 0 on successful execution.
+  */
+  int main(void)
+  {
+  /** Stores the character entered by the user */
+  char a;
 
-        if (scanf(" %c", &a) == 1)
-        {
-            break;
-        }
+  char ch;
 
-        printf("Invalid input. Please enter a character again.\n");
+  while (1)
+  {
+  printf("Enter a character: ");
 
-        while (getchar() != '\n');
-    }
+  
+   if (scanf(" %c", &a) == 1)
+   {
+       break;
+   }
 
-    if (a >= 'A' && a <= 'Z')
-    {
-        printf("The entered character is an uppercase letter.\n");
-    }
-    else if (a >= 'a' && a <= 'z')
-    {
-        printf("The entered character is a lowercase letter.\n");
-    }
-    else if (a >= '0' && a <= '9')
-    {
-        printf("The entered character is a digit.\n");
-    }
-    else
-    {
-        printf("The entered character is a special character.\n");
-    }
+   printf("Invalid input. Please enter a character again.\n");
 
-    return 0;
-}
+   while (scanf("%c", &ch) == 1 && ch != '\n')
+   {
+   }
+  
+
+  }
+
+  if (a >= 'A' && a <= 'Z')
+  {
+  printf("The entered character is an uppercase letter.\n");
+  }
+  else if (a >= 'a' && a <= 'z')
+  {
+  printf("The entered character is a lowercase letter.\n");
+  }
+  else if (a >= '0' && a <= '9')
+  {
+  printf("The entered character is a digit.\n");
+  }
+  else
+  {
+  printf("The entered character is a special character.\n");
+  }
+
+  return 0;
+  }

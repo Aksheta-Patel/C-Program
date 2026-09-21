@@ -1,55 +1,64 @@
 /**
- * @file largest_of_three.c
- * @brief Finds the largest of three integers using nested ternary operators.
- *
- * This program takes three integers from the user and uses nested
- * ternary operators to find the largest value.
- */
+
+* @file pass_fail_ternary.c
+* @brief Checks whether a student has passed or failed using the ternary operator.
+*
+* This program takes marks from the user and uses the ternary
+* operator to determine whether the student has passed or failed.
+  */
 
 #include <stdio.h>
 
 /**
- * @brief Entry point of the program.
- *
- * The program:
- * - Takes three integers from the user.
- * - Compares the integers using nested ternary operators.
- * - Stores the largest value in result.
- * - Displays the largest value.
- *
- * @return int Returns 0 on successful execution.
- */
-int main(void)
-{
-    /** Stores the first integer */
-    int a;
 
-    /** Stores the second integer */
-    int b;
+* @brief Entry point of the program.
+*
+* The program:
+* * Takes marks from the user.
+* * Checks the marks using the ternary operator.
+* * Stores the result in result.
+* * Displays whether the student has passed or failed.
+*
+* @return int Returns 0 on successful execution.
+  */
+  int main(void)
+  {
+  /** Stores the marks entered by the user */
+  int marks;
 
-    /** Stores the third integer */
-    int c;
+  /** Stores the pass or fail result */
+  char result;
 
-    /** Stores the largest value */
-    int result;
+  char ch;
 
-    while (1)
-    {
-        printf("Enter three integers: ");
+  while (1)
+  {
+  printf("Enter marks: ");
 
-        if (scanf("%d %d %d", &a, &b, &c) == 3)
-        {
-            break;
-        }
+   if (scanf("%d", &marks) == 1 && marks >= 0 && marks <= 100)
+   {
+       break;
+   }
 
-        printf("Invalid input. Please enter three integers again.\n");
+   printf("Invalid marks. Please enter marks from 0 to 100 again.\n");
 
-        while (getchar() != '\n');
-    }
+   while (scanf("%c", &ch) == 1 && ch != '\n')
+   {
+   }
+ 
 
-    result = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+  }
 
-    printf("The largest value is %d.\n", result);
+  result = (marks >= 40) ? 'P' : 'F';
 
-    return 0;
-}
+  if (result == 'P')
+  {
+  printf("The student has passed.\n");
+  }
+  else
+  {
+  printf("The student has failed.\n");
+  }
+
+  return 0;
+  }
