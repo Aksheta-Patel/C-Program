@@ -8,17 +8,16 @@
   */
 
 /* Structure definition with structure tag */
-struct person
-{
-    char name[20];
+typedef struct 
+    {char name[20];
     int age;
-    };
+    }person;
 
-    int main(void)
-    {
+int main(void)
+{
     /* Create structure variables using the structure tag */
-    struct person p1;
-    struct person p2;
+    person p1;
+    person p2;
     printf("Enter age of person p1: ");
     scanf("%d", &p1.age);
     printf("%d\n", p1.age);

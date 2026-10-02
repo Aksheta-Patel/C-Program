@@ -10,13 +10,13 @@
 */
 
 #include <stdio.h>
-
+// structure of concept padding 
 typedef struct 
 {
     char x;
     int y;
 }person;
-
+// to print the size of structure 
 int main(void)
 {
     person p;
