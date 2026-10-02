@@ -7,7 +7,7 @@
 * @details Defines a structure with a tag and initializes variables inside main.
   */
 
-/* Structure definition with structure tag */
+//Structure definition with structure tag 
 typedef struct 
 {
     char name[20];
@@ -16,7 +16,7 @@ typedef struct
 
 int main(void)
 {
-    /* Declare and initialize structure variables */
+    //Declare and initialize structure variables 
     person p1 = {"hina", 55};
     person p2 = {"mina", 44};
     printf("%d\n", p1.age);

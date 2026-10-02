@@ -1,10 +1,3 @@
-/**
-
-* @file student_structure.c
-* @brief Declares a Student structure and prints student details.
-* @details Stores the student's name, roll number, and marks with input validation.
-  */
-
 #include <stdio.h>
 // structure format
 typedef struct
@@ -18,8 +11,29 @@ int main(void)
 {
     Student s;
     char ch;
-    printf("enter student name: ");
-    scanf("%s", s.name);
+    int i;
+
+    // validation
+    do
+    {
+        printf("enter student name: ");
+        scanf("%s", s.name);
+
+        i = 0;
+
+        while (s.name[i] != '\0')
+        {
+            if (s.name[i] >= '0' && s.name[i] <= '9')
+            {
+                printf("invalid input! enter name only\n");
+                break;
+            }
+
+            i++;
+        }
+
+    } while (s.name[i] != '\0');
+
     // validation
     do
     {
@@ -37,6 +51,7 @@ int main(void)
             }
         }
     } while (1);
+
     // validation
     do
     {
@@ -59,5 +74,6 @@ int main(void)
     printf("name: %s\n", s.name);
     printf("roll Number: %d\n", s.roll_number);
     printf("marks: %f\n", s.marks);
+
     return 0;
 }

@@ -1,12 +1,6 @@
-/**
-
-* @file pointer_to_structure.c
-* @brief Demonstrates accessing structure members using a pointer.
-  */
-
 #include <stdio.h>
 
-/* Structure definition */
+// Structure definition 
 typedef struct 
 {
     int x;

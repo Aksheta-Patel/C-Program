@@ -1,13 +1,5 @@
 #include <stdio.h>
-
-/**
-
-* @file structure.c
-* @brief Demonstrates the use of a structure tag.
-* @details Defines a structure with a tag and creates structure variables.
-  */
-
-/* Structure definition with structure tag */
+/* Structure with structure tag */
 typedef struct 
     {char name[20];
     int age;
@@ -15,13 +7,26 @@ typedef struct
 
 int main(void)
 {
-    /* Create structure variables using the structure tag */
+    //to Create structure variables using the structure tag 
     person p1;
-    person p2;
-    printf("Enter age of person p1: ");
-    scanf("%d", &p1.age);
+    char ch;
+    do
+    {
+        printf(" enter age of p1: ");
+
+        if (scanf("%d%c", &p1.age, &ch) == 2 && p1.age > 0 && ch == '\n')
+        {
+            break;
+        }
+
+        printf("invalid input! enter numbers only\n");
+
+        while (scanf("%c", &ch) == 1 && ch != '\n')
+        {
+        }
+
+    } while (1);
     printf("%d\n", p1.age);
     return 0;
    
-
 }

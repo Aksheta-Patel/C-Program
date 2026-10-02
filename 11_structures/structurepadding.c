@@ -1,14 +1,3 @@
-/**
-
-* @file structure_padding.c
-* @brief Demonstrates structure padding using sizeof().
-* @details Shows how the size of a structure can be larger than
-* ```
-       the sum of the sizes of its members.
-  ```
-
-*/
-
 #include <stdio.h>
 // structure of concept padding 
 typedef struct 

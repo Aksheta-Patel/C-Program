@@ -12,12 +12,12 @@ typedef struct
 {
     char name[20];
     int age;
-} person;
+} person_t;
 
-    int main(void)
-    {
-    person p1 = {"hina", 25};
-    person p2;
+int main(void)
+{
+    person_t p1 = {"hina", 25};
+    person_t p2;
 
     // copy structure
     p2 = p1;
@@ -28,4 +28,5 @@ typedef struct
     printf("p2 name: %s\n", p2.name);
     printf("p2 age: %d\n", p2.age);
     return 0;
+    
 }

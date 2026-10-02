@@ -19,9 +19,6 @@
 * * Takes an operation choice from the user.
 * * Performs the selected arithmetic operation.
 * * Checks for division by zero.
-*
-* @return int Returns 0 on successful execution.
-  */
   int main(void)
   {
   /** Stores the first integer */

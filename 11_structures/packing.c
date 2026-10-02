@@ -23,8 +23,6 @@ typedef struct
 int main(void)
 {
     person p;
-
     printf("Size of structure: %zu\n", sizeof(p));
-
     return 0;
 }

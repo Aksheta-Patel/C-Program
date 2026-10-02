@@ -19,6 +19,8 @@ int main(void)
 {
     employee e;
     char ch;
+    int i;
+
     // input employee id
     do
     {
@@ -39,8 +41,25 @@ int main(void)
     } while (1);
 
     // input employee name
-    printf("enter employee name: ");
-    scanf("%s", e.name);
+    do
+    {
+        printf("enter employee name: ");
+        scanf("%s", e.name);
+
+        i = 0;
+
+        while (e.name[i] != '\0')
+        {
+            if (e.name[i] >= '0' && e.name[i] <= '9')
+            {
+                printf("invalid input! enter name only\n");
+                break;
+            }
+
+            i++;
+        }
+
+    } while (e.name[i] != '\0');
 
     // input employee salary
     do
