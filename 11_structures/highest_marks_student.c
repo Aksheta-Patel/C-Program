@@ -1,4 +1,5 @@
 #include <stdio.h>
+// structure of highest marks 
 typedef struct 
 {
     char name[20];

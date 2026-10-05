@@ -1,4 +1,5 @@
 #include <stdio.h>
+// structure of students details
 typedef struct 
 {
     char name[20];
@@ -23,6 +24,7 @@ int main()
         
 
     }
+    // to display all details 
      for(i=0;i<=4;i++)
      {
         printf(" name of student %d is :%s\n",i+1,s[i].name);

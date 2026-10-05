@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+// structure to sort students by name 
 typedef struct
 {
     char name[20];
@@ -23,7 +23,7 @@ int main()
     {
         for(j=i+1;j<3;j++)
         {
-            if(strcmp(s[i].name,s[j].name)>0)
+            if(strcmp(s[i].name,s[j].name)>0)// use of strcmp function to compare names alphabet wise
             {
                 temp=s[i];
                 s[i]=s[j];
