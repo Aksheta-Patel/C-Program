@@ -89,6 +89,7 @@ int main()
     int n, i, choice, f;
     printf("enter the number of students : ");
     scanf("%d", &n);
+    
     for(i = 0; i < n; i++)
     {
         printf("enter name of student %d : ", i + 1);
@@ -111,19 +112,19 @@ int main()
         switch(choice)
         {
             case 1:
-        f = find(n);
+            f = find(n);
 
-        if(f != -1)
-        {
-            printf("name : %s\n", s[f].name);
-            printf("std : %d\n", s[f].std);
-            printf("roll : %d\n", s[f].roll);
-        }
-        else
-        {
-            printf("name not found\n");
-        }
-        break;
+                if(f != -1)
+                {
+                    printf("name : %s\n", s[f].name);
+                    printf("std : %d\n", s[f].std);
+                    printf("roll : %d\n", s[f].roll);
+                }
+                else
+                {
+                    printf("name not found\n");
+                }
+                break;
 
             case 2:
                 edit(n);
