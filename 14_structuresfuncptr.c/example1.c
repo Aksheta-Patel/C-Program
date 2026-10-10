@@ -23,7 +23,7 @@ uint8_t Receive( char *bufferr)
 }
 int main(void)
 {
-  printf("Example: Function_ptr_03: Function pointor within the designated structure\n");
+  printf("Example: Function_ptr_03: Function pointer within the designated structure\n");
   static ESP32_Opt_t ESP32_Opt = 
   {
      .WiFi_Send = Send,
