@@ -11,7 +11,7 @@ typedef struct
 student_t s[50];
 typedef enum 
 {
-   NAME,
+   NAME=1,
    STD,
    ROLL,
    EXIT,
@@ -19,7 +19,7 @@ typedef enum
 
 typedef enum 
 {
-   FIND,
+   FIND=1,
    EDIT,
    DELETE,
 }update;
