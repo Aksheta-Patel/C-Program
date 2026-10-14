@@ -1,36 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// code of realloc to expand memory
+// code of malloc and realloc
 
-int main()
+int main(void)
 {
-    int *p, *q, i;
-    p = (int *)malloc(3 * sizeof(int));  // Allocate 3 integers
+    int *p, *temp, i;
 
-    if(p == NULL)
+    p = malloc(3 * sizeof(int));
+
+    if (p == NULL)
+    {
         return 1;
+    }
 
-    for(i = 0; i < 3; i++)
-        p[i] = i + 1;                    // Store values
+    for (i = 0; i < 3; i++)
+    {
+        printf("enter value: ");
+        scanf("%d", &p[i]);
+    }
 
-    q = (int *)realloc(p, 6 * sizeof(int));  // Increase size to 6 integers
+    temp = realloc(p, 6 * sizeof(int));
 
-    if(q == NULL)
+    if (temp == NULL)
     {
         free(p);
         return 1;
     }
 
-    p = q;   
-                                // Update pointer
-    for(i = 3; i < 6; i++)
-        p[i] = i + 1;                    // Store new values
+    p = temp;
 
-    for(i = 0; i < 6; i++)
-        printf("%d ", p[i]);             // Print all elements
+    for (i = 3; i < 6; i++)
+    {
+        printf("enter new value: ");
+        scanf("%d", &p[i]);
+    }
 
-    free(p);                             // Free memory
+    for (i = 0; i < 6; i++)
+    {
+        printf("%d ", p[i]);
+    }
+
+    printf("\n");
+    free(p);
 
     return 0;
 }

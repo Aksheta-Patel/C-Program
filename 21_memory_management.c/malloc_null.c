@@ -6,15 +6,15 @@
 int main()
 {
     int *p;
+    p = malloc(sizeof(int));// Allocate memory
 
-    p = (int *)malloc(sizeof(int));  // Allocate memory
+    if(p == NULL)// Check whether allocation failed
+    printf("Memory allocation failed");
 
-    if(p == NULL)                    // Check whether allocation failed
-        printf("Memory allocation failed");
     else
-        printf("Memory allocated");
+    printf("Memory allocated\n");
 
-    free(p);                         // Free memory
+    free(p);                         
 
     return 0;
 }

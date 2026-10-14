@@ -6,14 +6,15 @@
 int main()
 {
     int *p, *q;
-    p = (int *)malloc(3 * sizeof(int));  // Allocate memory
+    p = malloc(3 * sizeof(int));// Allocate memory
 
     if(p == NULL)
+    {
         return 1;
+    }
 
-    printf("Before realloc: %p\n", (void *)p);  // Print original address
-
-    q = (int *)realloc(p, 10 * sizeof(int));    // Resize memory
+    printf("before realloc: %p\n", (void *)p);// Print original address
+    q = realloc(p, 10 * sizeof(int));// Resize memory
 
     if(q == NULL)
     {
@@ -21,9 +22,9 @@ int main()
         return 1;
     }
 
-    p = q;                                      // Update pointer
-    printf("After realloc: %p\n", (void *)p);   // Print new address
-    free(p);                                    // Free memory
+    p = q;// Update pointer
+    printf("after realloc: %p\n", (void *)p);// Print new address
+    free(p);                                    
 
     return 0;
 }

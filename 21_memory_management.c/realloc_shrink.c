@@ -6,15 +6,27 @@
 int main()
 {
     int *p, *q, i;
-    p = (int *)malloc(10 * sizeof(int));  // Allocate 10 integers
+    p = (int *)malloc(10 * sizeof(int));// Allocate 10 integers
 
     if(p == NULL)
+    {
         return 1;
+    }
 
     for(i = 0; i < 10; i++)
-        p[i] = i + 1;                    // Store values
+    {
+        p[i] = i + 1;// Store values
+    }
 
-    q = (int *)realloc(p, 5 * sizeof(int));  // Reduce size to 5 integers
+    printf("before shrink:\n");
+
+    for(i = 0; i < 10; i++)
+    {
+        printf("%d\n", p[i]);              
+    }
+    
+
+    q = (int *)realloc(p, 5 * sizeof(int));// Reduce size to 5 integers
 
     if(q == NULL)
     {
@@ -22,12 +34,15 @@ int main()
         return 1;
     }
 
-    p = q;                                // Update pointer
+    p = q;// Update pointer
+
+    printf("after shrink:\n");
 
     for(i = 0; i < 5; i++)
-        printf("%d ", p[i]);              // Print remaining elements
+    {
+        printf("%d\n", p[i]);              
+    }
 
-    free(p);                              // Free memory
-
+    free(p);                             
     return 0;
 }
