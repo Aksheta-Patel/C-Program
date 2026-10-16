@@ -24,7 +24,9 @@ int main(void)
     second->prev = head;
     second->next = NULL;
 
-    printf("%d %d", head->data, head->next->data);
+    printf("forward direction :%d %d\n", head->data, head->next->data);
+    printf("backward direction :%d %d\n", head->next->data, head->data);
+ 
     free(head);
     free(second);
 
