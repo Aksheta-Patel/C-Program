@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// code to reverse a doubly linked list
+
+struct Node
+{
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+
+int main(void)
+{
+    struct Node *head;
+    struct Node *second;
+    struct Node *third;
+    struct Node *p;
+    struct Node *t;
+
+    head = malloc(sizeof(struct Node));
+    second = malloc(sizeof(struct Node));
+    third = malloc(sizeof(struct Node));
+
+    head->data = 10;
+    head->prev = NULL;
+    head->next = second;
+
+    second->data = 20;
+    second->prev = head;
+    second->next = third;
+
+    third->data = 30;
+    third->prev = second;
+    third->next = NULL;
+
+    p = head;
+
+    while(p != NULL)
+    {
+        t = p->prev;
+        p->prev = p->next;
+        p->next = t;
+        p = p->prev;
+    }
+
+    head = third;
+
+    p = head;
+
+    while(p != NULL)
+    {
+        printf("%d <-> ", p->data);
+        p = p->next;
+    }
+
+    printf("NULL\n");
+
+    free(third);
+    free(second);
+    free(head);
+
+    return 0;
+}
