@@ -31,18 +31,16 @@ int main(void)
     third->next = NULL;
 
     p = head;
-
     while(p != NULL)
     {
         count++;
         p = p->next;
     }
 
-    printf("Total nodes = %d\n", count);
+    printf("nodes = %d\n", count);
 
     free(head);
     free(second);
     free(third);
-
     return 0;
 }

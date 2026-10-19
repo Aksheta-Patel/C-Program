@@ -20,7 +20,7 @@ void display(struct Node *p)
 
 int main(void)
 {
-    struct Node *head;
+    struct Node *head;                                                                                                     
     struct Node *second;
     struct Node *third;
 

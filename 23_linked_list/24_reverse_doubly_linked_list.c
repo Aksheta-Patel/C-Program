@@ -36,7 +36,7 @@ int main(void)
 
     p = head;
 
-    while(p != NULL)
+    while (p != NULL)
     {
         t = p->prev;
         p->prev = p->next;
@@ -48,17 +48,24 @@ int main(void)
 
     p = head;
 
-    while(p != NULL)
+    while (p != NULL)
     {
-        printf("%d <-> ", p->data);
+        printf("%d -> ", p->data);
         p = p->next;
     }
 
     printf("NULL\n");
 
-    free(third);
-    free(second);
-    free(head);
+    // free memory
+    p = head;
+
+    while (p != NULL)
+    {
+        t = p->next;
+        free(p);
+        p = t;
+    }
 
     return 0;
 }
+

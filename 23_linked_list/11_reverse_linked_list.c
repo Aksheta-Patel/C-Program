@@ -11,12 +11,8 @@ struct Node
 
 int main(void)
 {
-    struct Node *head;
-    struct Node *second;
-    struct Node *third;
-    struct Node *p;
-    struct Node *prev = NULL;
-    struct Node *next;
+    struct Node *head, *second, *third, *p;
+    struct Node *prev = NULL, *next;
 
     head = malloc(sizeof(struct Node));
     second = malloc(sizeof(struct Node));
@@ -33,7 +29,7 @@ int main(void)
 
     p = head;
 
-    while(p != NULL)
+    while (p != NULL)
     {
         next = p->next;
         p->next = prev;
@@ -44,7 +40,8 @@ int main(void)
     head = prev;
 
     p = head;
-    while(p != NULL)
+
+    while (p != NULL)
     {
         printf("%d -> ", p->data);
         p = p->next;
@@ -52,9 +49,14 @@ int main(void)
 
     printf("NULL\n");
 
-    free(third);
-    free(second);
-    free(head);
+        p = head;
 
+    while (p != NULL)
+    {
+        next = p->next;
+        free(p);
+        p = next;
+    }
     return 0;
 }
+

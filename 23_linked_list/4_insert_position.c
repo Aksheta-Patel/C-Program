@@ -33,9 +33,9 @@ int main(void)
     third->next = NULL;
 
     // insert node at position 3
-    newnode->data = 30;
-    newnode->next = third;
-    second->next = newnode;
+    newnode->data = 15;
+    newnode->next = second;
+    head->next=newnode;
 
     // print the linked list
     struct Node *p = head;

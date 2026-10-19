@@ -11,11 +11,7 @@ struct Node
 
 int main(void)
 {
-    struct Node *head;
-    struct Node *second;
-    struct Node *third;
-    struct Node *p;
-    struct Node *q;
+    struct Node *head, *second, *third, *p, *q;
 
     head = malloc(sizeof(struct Node));
     second = malloc(sizeof(struct Node));

@@ -44,9 +44,8 @@ int main(void)
     printf("NULL\n");
 
     // free memory
-    free(newnode);
     free(second);
     free(head->next);
-
+    free(head);
     return 0;
 }

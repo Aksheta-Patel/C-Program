@@ -16,6 +16,7 @@ int main(void)
     struct Node *newnode;
     struct Node *fourth;
     struct Node *p;
+    struct Node *t;
 
     head = malloc(sizeof(struct Node));
     second = malloc(sizeof(struct Node));
@@ -46,14 +47,21 @@ int main(void)
         printf("%d -> ", p->data);
         p = p->next;
     }
-    while(p != head);
+    while (p != head);
 
     printf("HEAD\n");
 
-    free(newnode);
-    free(head->next);
-    free(fourth);
-    free(second);
+    // free memory
+    p = head;
+
+    do
+    {
+        t = p->next;
+        free(p);
+        p = t;
+    }
+    while (p != head);
 
     return 0;
 }
+

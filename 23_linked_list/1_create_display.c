@@ -40,10 +40,9 @@ int main(void)
     }
 
     printf("NULL\n");
-
+    
     free(head);
     free(second);
     free(third);
-
     return 0;
 }

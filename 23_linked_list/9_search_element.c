@@ -31,25 +31,23 @@ int main(void)
     third->next = NULL;
 
     p = head;
-
     while(p != NULL)
     {
         if(p->data == 20)
         {
-            printf("Element found at position %d\n", count);
+            printf("element found at position %d\n", count);
             break;
         }
-
         count++;
         p = p->next;
     }
 
     if(p == NULL)
-        printf("Element not found\n");
-
+    {
+        printf("element not found\n");
+    }
     free(head);
     free(second);
     free(third);
-
     return 0;
 }
